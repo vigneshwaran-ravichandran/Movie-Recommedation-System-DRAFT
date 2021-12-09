@@ -11,9 +11,7 @@ This repository will contain files for the DSCI-633: Foundations of Data Science
 
 user_id :: gender :: age :: occupation :: zipcode
 				
-The data source provided the information that all demographic information is provided voluntarily by the users and is not checked for accuracy.  Only users who have provided some demographic
-
-information are included in this data set.
+The data source provided the information that all demographic information is provided voluntarily by the users and is not checked for accuracy.  Only users who have provided some demographic information are included in this data set.
 
 - UserIDs range between 1 and 604 and also serves as the foreign key for User.dat and Ratings.dat file
 
