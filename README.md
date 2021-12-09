@@ -85,7 +85,7 @@ To start using this project with Git, you’ll need to install or have access to
 ### Installation
 
 #### Git
-Git can be installed using a CLI or an executable file. The installation instructions can be found at the following link:[Windows](https://git-scm.com/download/win) or [Mac OSX](https://git-scm.com/download/mac)
+Git can be installed using a CLI or an executable file. The installation instructions can be found at the following link: [Windows](https://git-scm.com/download/win) or [Mac OSX](https://git-scm.com/download/mac)
 
 
 #### Python and Jypter notebook
