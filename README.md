@@ -11,7 +11,9 @@ This repository will contain files for the DSCI-633: Foundations of Data Science
 
 user_id :: gender :: age :: occupation :: zipcode
 				
-The data source provided the information that all demographic information is provided voluntarily by the users and is not checked for accuracy.  Only users who have provided some demographic information are included in this data set.
+The data source provided the information that all demographic information is provided voluntarily by the users and is not checked for accuracy.  Only users who have provided some demographic
+
+information are included in this data set.
 
 - UserIDs range between 1 and 604 and also serves as the foreign key for User.dat and Ratings.dat file
 
@@ -85,7 +87,7 @@ To start using this project with Git, you’ll need to install or have access to
 ### Installation
 
 #### Git
-Git can be installed using a CLI or an executable file. The installation instructions can be found at the following link: [Windows](https://git-scm.com/download/win) or [Mac OSX](https://git-scm.com/download/mac)
+Git can be installed using a CLI or an executable file. The installation instructions can be found at the following link:[Windows](https://git-scm.com/download/win) or [Mac OSX](https://git-scm.com/download/mac)
 
 
 #### Python and Jypter notebook
@@ -129,6 +131,35 @@ In the application window, there will be a file explorer. Navigate to the respec
 If you want to run this project on Google Colab, Navigate to the following [link](https://colab.research.google.com/)
 
 In the application window, click on File->Open Notebook from the menu tab or press Ctrl + O. On the open popup model, click on upload file and go to the respective folder where this project is cloned and select the **" Movie Recommendation system - DSCI Final Project.ipynb "** so that it can be uploaded to Google Colab.
+
+There is a special step that has to be taken for Google Colab. Since we are importing only the notebook, we won't have the other important files required to run this project on the colab machine. So, before proceeding to the next section, add the following code snippet to the first line of the note book and run it.This will create a clone of the repository on the colab machine.
+
+    from zipfile import ZipFile
+	import urllib.request
+	import os
+	import shutil
+	
+	DOWNLOAD_ROOT = "https://github.com/Praveen271195/Movie-Recommedation-System/archive/main.zip"
+	
+	FOLDER_PATH = os.path.curdir;
+	FILE_URL = DOWNLOAD_ROOT
+
+	
+	def fetch_data(FILE_URL=FILE_URL, FOLDER_PATH=FOLDER_PATH):
+	    if not os.path.isdir(FOLDER_PATH):
+	        os.makedirs(FOLDER_PATH)
+	    tgz_path = os.path.join(FOLDER_PATH, "main.zip")
+	    urllib.request.urlretrieve(FILE_URL, tgz_path)
+	    with ZipFile(tgz_path, 'r') as zipObj:
+	      zipObj.extractall(FOLDER_PATH)
+	    
+	    folderPath = os.path.join("Movie-Recommedation-System-main")
+	    file_names = os.listdir(folderPath)
+	  
+	    for file_name in file_names:
+	      shutil.move(os.path.join(folderPath, file_name), os.path.curdir)
+
+	fetch_data()
 
 ### Running the project
  
